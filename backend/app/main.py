@@ -81,8 +81,9 @@ An enterprise-grade analytics, machine learning, and AI decision intelligence ba
 app.add_middleware(
     CORSMiddleware,
     allow_origins=backend_config.CORS_ORIGINS,
+    allow_origin_regex=r"^https?://(localhost|127\.0\.0\.1)(:\d+)?$",
     allow_credentials=True,
-    allow_methods=["GET", "POST", "PUT", "DELETE", "OPTIONS", "PATCH"],
+    allow_methods=["*"],
     allow_headers=["*"],
     expose_headers=["X-Process-Time-Ms"]
 )
